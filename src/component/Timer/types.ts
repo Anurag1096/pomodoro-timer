@@ -1,3 +1,5 @@
 export interface TimerState{
-    work:string
+    hours:number,
+    minutes:number,
+    seconds:number,
 }
