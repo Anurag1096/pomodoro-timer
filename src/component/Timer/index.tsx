@@ -1,60 +1,34 @@
 import { TimerState } from "./types";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import HOURS from "./Hours";
 import MINUTES from "./Minutes";
 import SECONDS from "./Seconds";
-// The timer will have three properties
-// Hour's, Minute's and Second's.
-// The timer component could be manipulated from outside
-// The timer recieves these three properties
-// The logic of manupulation will be handled by this file.
-// Now need to figure out the should i create different comp for hour,min and sec.
 
-/*
-timer logic
-let start= performance.now()
-let totalDuration= 1* 60* 1000;
-// now we create the function which will dispaly the timer
-const displayTimer=(leftms)=>{
-   let hours = Math.floor(leftms / 3600000);
-  let min = Math.floor((leftms % 3600000) / 60000);
-  let sec = Math.floor((leftms % 60000) / 1000);
 
-  // format with leading zeros
-  let hh = hours.toString().padStart(2, "0");
-  let mm = min.toString().padStart(2, "0");
-  let ss = sec.toString().padStart(2, "0");
-
-  console.log(`${hh}:${mm}:${ss}`);
-}
-const timer= setInterval(()=>{
-    let elapsed= performance.now() - start;
-    let remaining= totalDuration - elapsed
-    if (remaining <=0){
-        clearInterval(timer)
-        remaining=0
-    }else{
-        displayTimer(remaining)
-    }
-},1000)
-*/
 const Timer = ({ hours, minutes, seconds, onReset }: TimerState) => {
-    // convert input props into milliseconds
-  const totalDuration =
-    hours * 3600000 + minutes * 60000 + seconds * 1000;
-    const [remainingMs, setRemainingMs] = useState<number>(totalDuration);
+  // convert input props into milliseconds
+  const totalDuration = hours * 3600000 + minutes * 60000 + seconds * 1000;
+  const [remainingMs, setRemainingMs] = useState<number>(totalDuration);
+  
+  useEffect(() => {
+    const start = performance.now();
+    // need to set the above comented login.
+    const timer = setInterval(() => {
+      const elapsed = performance.now() - start;
+      let remaining = Math.max(totalDuration - elapsed, 0);
+      setRemainingMs(remaining);
+      if (remaining <= 0) {
+        clearInterval(timer);
+        remaining = 0;
+      }
+    }, 1000);
 
-useEffect(()=>{
-// need to set the above comented login.
-
-
-},[totalDuration])
-
+    return () => clearInterval(timer);
+  }, [totalDuration]);
 
   const hh = Math.floor(remainingMs / 3600000);
   const mm = Math.floor((remainingMs % 3600000) / 60000);
   const ss = Math.floor((remainingMs % 60000) / 1000);
-
 
   return (
     <>
