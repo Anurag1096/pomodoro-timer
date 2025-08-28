@@ -1,7 +1,11 @@
 import { TimerState } from "./types";
-// The timer will have three properties 
+import { useState,useEffect } from "react";
+import HOURS from "./Hours";
+import MINUTES from "./Minutes";
+import SECONDS from "./Seconds";
+// The timer will have three properties
 // Hour's, Minute's and Second's.
-// The timer component could be manipulated from outside 
+// The timer component could be manipulated from outside
 // The timer recieves these three properties
 // The logic of manupulation will be handled by this file.
 // Now need to figure out the should i create different comp for hour,min and sec.
@@ -34,12 +38,33 @@ const timer= setInterval(()=>{
     }
 },1000)
 */
-const Timer =({hours,minutes,seconds}:TimerState)=>{
-    
-    
-    return (<>
-    
-    </>)
-}
+const Timer = ({ hours, minutes, seconds, onReset }: TimerState) => {
+    // convert input props into milliseconds
+  const totalDuration =
+    hours * 3600000 + minutes * 60000 + seconds * 1000;
+    const [remainingMs, setRemainingMs] = useState<number>(totalDuration);
+
+useEffect(()=>{
+// need to set the above comented login.
+
+
+},[totalDuration])
+
+
+  const hh = Math.floor(remainingMs / 3600000);
+  const mm = Math.floor((remainingMs % 3600000) / 60000);
+  const ss = Math.floor((remainingMs % 60000) / 1000);
+
+
+  return (
+    <>
+      <div style={{ display: "flex" }}>
+        <HOURS Hours={hh} />:
+        <MINUTES Minutes={mm} />:
+        <SECONDS Seconds={ss} />:
+      </div>
+    </>
+  );
+};
 
 export default Timer;
