@@ -1,5 +1,6 @@
 import { TimerState } from "./types";
 import { useState, useEffect } from "react";
+import "./timer.css"
 import HOURS from "./Hours";
 import MINUTES from "./Minutes";
 import SECONDS from "./Seconds";
@@ -32,7 +33,7 @@ const Timer = ({ hours, minutes, seconds, onReset }: TimerState) => {
 
   return (
     <>
-      <div style={{ display: "flex" }}>
+      <div className="timer-wrapper">
         <HOURS Hours={hh} />:
         <MINUTES Minutes={mm} />:
         <SECONDS Seconds={ss} />:
