@@ -1,9 +1,20 @@
-import React from 'react'
+// components/DashboardLayout.tsx
+import Navbar from "./NavBar";
+import SideBar from "./sideBar";
 
-function Layout() {
+export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div>index</div>
-  )
-}
+    <div className="flex h-screen">
+      {/* Sidebar */}
+      <SideBar/>
 
-export default Layout;
+      {/* Main content area */}
+      <div className="flex flex-col flex-1">
+        <Navbar />
+        <main className="p-4 overflow-y-auto flex-1">
+          {children}
+        </main>
+      </div>
+    </div>
+  );
+}
