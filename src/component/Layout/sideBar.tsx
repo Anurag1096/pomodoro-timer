@@ -1,16 +1,23 @@
-import Link from "next/link";
-const SideBar=()=>{
-    return (<>
-       
-     <aside className="w-64 bg-gray-900 text-white p-4">
-      <ul className="space-y-2">
-        <li><Link href="/dashboard/overview">Overview</Link></li>
-        <li><Link href="/dashboard/settings">Settings</Link></li>
-        <li><Link href="/dashboard/users">Users</Link></li>
-      </ul>
-    </aside>
-    </>)
-}
+import SideBarDesktop from "./sideBarDesktop";
+import SideBarMobile from "./SideBarMobile";
+import { useState, useEffect } from "react";
 
+const SideBar = () => {
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return <div>{isMobile ? <SideBarMobile /> : <SideBarDesktop />}</div>;
+};
 
 export default SideBar;
