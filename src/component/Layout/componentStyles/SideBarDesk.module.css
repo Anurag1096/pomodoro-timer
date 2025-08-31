@@ -1,0 +1,25 @@
+.sbDesktop-wrapper{
+width: 9rem;      
+height:100vh;      
+  background-color: #111827; 
+  color: #ffffff;            
+  padding: 1rem;             
+}
+
+
+.sbDesktop-ul{
+    margin-top:2rem;
+    list-style-type: none;
+    width:100%; 
+}
+.sbDesktop-li{
+    padding:0.3rem;
+    width:100%;
+    border:1px solid red;
+    border-radius:1rem;
+    margin: 1rem 0;
+    text-align:center;
+}
+.sbDesktop-li:hover{
+    background-color: #263658ff;
+}

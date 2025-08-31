@@ -1,17 +1,17 @@
 // components/DashboardLayout.tsx
 import Navbar from "./NavBar";
 import SideBar from "./sideBar";
-
+import styles from '@/component/Layout/componentStyles/Layout.module.css'
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex h-screen">
+    <div className={styles["layout-wrapper"]}>
       {/* Sidebar */}
       <SideBar/>
 
       {/* Main content area */}
-      <div className="flex flex-col flex-1">
+      <div className={styles["layout-main-wrapper"]}>
         <Navbar />
-        <main className="p-4 overflow-y-auto flex-1">
+        <main className={styles['layout-content']}>
           {children}
         </main>
       </div>

@@ -1,11 +1,13 @@
 import Link from "next/link"
+
+import styles from '@/component/Layout/componentStyles/SideBarDesk.module.css'
 const SideBarDesktop=()=>{
     return(
-         <aside className="w-64 bg-gray-900 text-white p-4">
-      <ul className="space-y-2">
-        <li><Link href="/dashboard/overview">Overviewd</Link></li>
-        <li><Link href="/dashboard/settings">Settings</Link></li>
-        <li><Link href="/dashboard/users">Users</Link></li>
+    <aside className={styles["sbDesktop-wrapper"]}>
+      <ul className={styles["sbDesktop-ul"]}>
+        <li className={styles["sbDesktop-li"]}><Link href="/dashboard/overview">Overviewd</Link></li>
+        <li className={styles["sbDesktop-li"]}><Link href="/dashboard/settings">Settings</Link></li>
+        <li className={styles["sbDesktop-li"]}><Link href="/dashboard/users">Users</Link></li>
       </ul>
     </aside>
     )

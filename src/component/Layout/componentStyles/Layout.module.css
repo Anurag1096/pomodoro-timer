@@ -1,0 +1,15 @@
+.layout-wrapper{
+    display:flex;
+    height:100vh;
+    color:red;
+}
+.layout-main-wrapper{
+    padding:1rem;
+    width:100%;
+}
+.layout-content{
+      padding: 1rem;       
+  overflow-y: auto;    
+  flex: 1 1 0%;   
+  border:1px solid green;     
+}

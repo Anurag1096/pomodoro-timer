@@ -1,0 +1,15 @@
+.navbar-wrapper{
+   padding:0.5rem; 
+   width:100%;
+   border:1px solid pink;   
+}
+.navlist-wrapper{
+  display:flex;
+  list-style-type: none;
+  justify-content:flex-end;
+align-items:center;
+}
+.navlist-items{
+    padding:0.5rem;
+    cursor:pointer;
+}

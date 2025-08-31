@@ -1,8 +1,8 @@
 import React from 'react'
-
+import styles from '@/pages/dashboard/styles/Overview.module.css'
 const Overview = () => {
   return (
-    <div>Overview</div>
+    <div className={styles["overview-wrapper"]}>Overview</div>
   )
 }
 
