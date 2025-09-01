@@ -1,12 +1,21 @@
 .sbDesktop-wrapper{
 width: 9rem;      
 height:100vh;      
-  background-color: #111827; 
+  background-color: #3d3c04ff; 
   color: #ffffff;            
-  padding: 1rem;             
+  padding: 1rem;        
+   transition:width 0.6s ease-out;     
 }
-
-
+.curtainWrap{
+    display:flex;
+    position:relative;
+    justify-content:flex-end;
+}
+.curtainImgWrap{
+    position:relative;
+    left:8px;
+    cursor:pointer;
+}
 .sbDesktop-ul{
     margin-top:2rem;
     list-style-type: none;
@@ -19,6 +28,15 @@ height:100vh;
     border-radius:1rem;
     margin: 1rem 0;
     text-align:center;
+}
+.sbDesktop-wrapClose{
+    width: 2.5rem;    
+     transition:width 0.6s ease-in;  
+  height:100vh;      
+  background-color: #1b362cff; 
+  color: #ffffff;            
+  padding: 1rem;   
+  overflow:hidden;
 }
 .sbDesktop-li:hover{
     background-color: #263658ff;
