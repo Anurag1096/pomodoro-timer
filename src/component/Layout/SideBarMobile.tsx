@@ -1,5 +1,8 @@
 import Link from "next/link"
+
 const SideBarMobile=()=>{
+
+
     return(
          <aside className="w-64 bg-gray-900 text-white p-4">
       <ul className="space-y-2">
