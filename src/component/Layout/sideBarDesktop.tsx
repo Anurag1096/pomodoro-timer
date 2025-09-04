@@ -17,9 +17,9 @@ const SideBarDesktop=()=>{
             </div>
         </div>
       <ul className={styles["sbDesktop-ul"]}>
+        <li className={styles["sbDesktop-li"]}><Link href="/dashboard">Home</Link></li>
         <li className={styles["sbDesktop-li"]}><Link href="/dashboard/overview">Overviewd</Link></li>
         <li className={styles["sbDesktop-li"]}><Link href="/dashboard/settings">Settings</Link></li>
-        <li className={styles["sbDesktop-li"]}><Link href="/dashboard/users">Users</Link></li>
       </ul>
     </aside>
     )

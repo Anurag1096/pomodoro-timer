@@ -26,10 +26,15 @@ const timerSlice =createSlice({
         },
         setSeconds(state,action:PayloadAction<number>){
             state.seconds=action.payload;
+        },
+        timerReset(state){
+            state.hours=0
+            state.minutes=25
+            state.seconds=0
         }
     }
 });
 
 
-export const {setHours,setMinutes,setSeconds}=timerSlice.actions;
+export const {setHours,setMinutes,setSeconds,timerReset}=timerSlice.actions;
 export default timerSlice.reducer
