@@ -1,10 +1,5 @@
 import {useState,useEffect,useRef} from 'react';
 import { StopwatchState } from './types';
-
-
-
-
-
 const StopWatch=({isSwatchRunning,onStart,onStop}:StopwatchState)=>{
 const pausedRef = useRef<number>(0);
 const intervalRef = useRef<NodeJS.Timeout | null>(null);

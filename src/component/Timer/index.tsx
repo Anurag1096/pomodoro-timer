@@ -61,7 +61,7 @@ const Timer = ({ hours, minutes, seconds, isRunning, onStart, onStop, onReset }:
     }
     pausedRef.current = totalDuration;
     setRemainingMs(totalDuration);
-    onReset(); // let parent also reset Redux state
+     // let parent also reset Redux state
   };
 
   const hh = Math.floor(remainingMs / 3600000);
