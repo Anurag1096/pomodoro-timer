@@ -1,10 +1,10 @@
 // pages/dashboard/index.tsx
 import DashboardLayout from "@/component/Layout";
-
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-import Timer from "@/component/Timer";
 import WorkTimer from "@/component/WorkTimer";
+import ShortBreakTimer from "@/component/ShortBreakTimer";
+import LongBreakTimer from "@/component/LongBreakTimer";
 export default function DashboardPage() {
   return (
     <DashboardLayout>
@@ -19,10 +19,10 @@ export default function DashboardPage() {
           <WorkTimer />
         </TabPanel>
         <TabPanel>
-          Short break
+          <ShortBreakTimer />
         </TabPanel>
         <TabPanel>
-          longBreak
+          <LongBreakTimer />
         </TabPanel>
       </Tabs>
     </DashboardLayout>
