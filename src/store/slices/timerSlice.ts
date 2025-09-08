@@ -28,9 +28,9 @@ const timerSlice =createSlice({
             state.seconds=action.payload;
         },
         timerReset(state){
-            state.hours=0
-            state.minutes=25
-            state.seconds=0
+            state.hours=state.hours
+            state.minutes=state.minutes
+            state.seconds=state.seconds
         }
     }
 });

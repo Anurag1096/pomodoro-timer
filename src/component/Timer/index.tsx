@@ -11,11 +11,13 @@ const Timer = ({ hours, minutes, seconds, isRunning, onStart, onStop, onReset }:
     () => Math.max(0, hours * 3600000 + minutes * 60000 + seconds * 1000),
     [hours, minutes, seconds]
   );
-
+  const finishedRef=useRef(null)
   const pausedRef = useRef(totalDuration);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const [remainingMs, setRemainingMs] = useState<number>(totalDuration);
-
+  const playFinishedSound=()=>{
+    finishedRef.current.play()
+  }
   useEffect(() => {
     let timer: NodeJS.Timeout | undefined;
 
@@ -29,6 +31,7 @@ const Timer = ({ hours, minutes, seconds, isRunning, onStart, onStop, onReset }:
         setRemainingMs(remaining);
 
         if (remaining <= 0) {
+          playFinishedSound()
           clearInterval(timer);
           intervalRef.current = null;
           pausedRef.current = totalDuration;
@@ -62,6 +65,7 @@ const Timer = ({ hours, minutes, seconds, isRunning, onStart, onStop, onReset }:
     pausedRef.current = totalDuration;
     setRemainingMs(totalDuration);
      // let parent also reset Redux state
+     onReset()
   };
 
   const hh = Math.floor(remainingMs / 3600000);
@@ -75,6 +79,7 @@ const Timer = ({ hours, minutes, seconds, isRunning, onStart, onStop, onReset }:
         <MINUTES Minutes={mm} />:
         <SECONDS Seconds={ss} />
       </div>
+      <audio ref={finishedRef} src={"/audio/finishSound.mp3"}/>
       <button onClick={onStart}>Start</button>
       <button onClick={onStop}>Stop</button>
       <button onClick={handleReset}>Reset</button>

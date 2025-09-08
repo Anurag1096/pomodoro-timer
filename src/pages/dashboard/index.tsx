@@ -1,33 +1,30 @@
 // pages/dashboard/index.tsx
 import DashboardLayout from "@/component/Layout";
-import { useCallback, useState } from "react";
-import Timer from "@/component/Timer";
-import { useAppSelector,useAppDispatch } from "@/store/hooks";
-import { timerReset } from "@/store/slices/timerSlice";
-export default function DashboardPage() {
-  const dispatch=useAppDispatch()
-  const { hours, minutes, seconds } = useAppSelector((state) => state.timer);
-  const [isRunning, setIsRunning] = useState<boolean>(false);
 
-  const resetTimer = useCallback(() => {
-    //reset  hours ,min and seconds.
-   dispatch(timerReset())
-    setIsRunning(false);
-  }, [dispatch,setIsRunning]);
-  const startTimer = () => setIsRunning(true);
-  const stopTimer = () => setIsRunning(false);
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
+import Timer from "@/component/Timer";
+import WorkTimer from "@/component/WorkTimer";
+export default function DashboardPage() {
   return (
     <DashboardLayout>
       <h1 className="text-2xl font-bold">Dashboard Home</h1>
-      <Timer
-        hours={hours}
-        minutes={minutes}
-        seconds={seconds}
-        isRunning={isRunning}
-        onStart={startTimer}
-        onStop={stopTimer}
-        onReset={resetTimer}
-      />
+      <Tabs>
+        <TabList>
+          <Tab>Wrok</Tab>
+          <Tab>Short Break</Tab>
+          <Tab>Long Break</Tab>
+        </TabList>
+        <TabPanel>
+          <WorkTimer />
+        </TabPanel>
+        <TabPanel>
+          Short break
+        </TabPanel>
+        <TabPanel>
+          longBreak
+        </TabPanel>
+      </Tabs>
     </DashboardLayout>
   );
 }
