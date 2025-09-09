@@ -1,12 +1,10 @@
-import React from 'react'
+import React from "react";
 
 type HoursProps = {
-  Hours: number; 
+  Hours: number;
 };
-const HOURS = ({Hours}:HoursProps) => {
-  return (
-    <div>{`${Hours.toString().padStart(2,"0")}`}</div>
-  )
-}
+const HOURS = ({ Hours }: HoursProps) => {
+  return <div>{`${Hours ? Hours.toString().padStart(2, "0")+":" : ""}`}</div>;
+};
 
-export default HOURS
+export default HOURS;

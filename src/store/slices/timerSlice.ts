@@ -5,13 +5,15 @@ interface TimerState{
     hours:number;
     minutes:number;
     seconds:number;
+    sessionCount:number;
 }
 
 
 const initialState : TimerState={
     hours:0,
     minutes:25,
-    seconds:0
+    seconds:0,
+    sessionCount:0
 }
 
 const timerSlice =createSlice({
@@ -26,6 +28,9 @@ const timerSlice =createSlice({
         },
         setSeconds(state,action:PayloadAction<number>){
             state.seconds=action.payload;
+        },
+        updateSessionCount(state){
+            state.sessionCount+=state.sessionCount;
         },
         timerReset(state){
             state.hours=state.hours
