@@ -28,7 +28,7 @@ const WorkSetting = () => {
   };
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form  onSubmit={handleSubmit}>
         <label htmlFor="hours">
           Hours
           <br />

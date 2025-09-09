@@ -28,7 +28,7 @@ const ShortBreakSetting = () => {
   };
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form  onSubmit={handleSubmit}>
         <div>
           <label htmlFor="minutes">
             Minutes

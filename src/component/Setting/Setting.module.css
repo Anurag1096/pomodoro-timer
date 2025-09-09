@@ -1,0 +1,11 @@
+.customPanel {
+    display:none;
+    padding: 20px;
+}
+
+.selectedPanel{
+    
+    display:block;
+
+
+}
