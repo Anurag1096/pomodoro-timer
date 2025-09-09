@@ -14,10 +14,10 @@ const longBreakSlice = createSlice({
   name: "longBreak",
   initialState,
   reducers: {
-    setSBMinutes: (state, action: PayloadAction<number>) => {
+    setLBMinutes: (state, action: PayloadAction<number>) => {
       state.longMinutes = action.payload;
     },
-    setSBSeconds: (state, action: PayloadAction<number>) => {
+    setLBSeconds: (state, action: PayloadAction<number>) => {
       state.longSeconds = action.payload;
     },
     resetlongBreak: (state) => {
@@ -27,6 +27,6 @@ const longBreakSlice = createSlice({
   },
 });
 
-export const { setSBMinutes, setSBSeconds, resetlongBreak } =
+export const { setLBMinutes, setLBSeconds, resetlongBreak } =
   longBreakSlice.actions;
 export default longBreakSlice.reducer;

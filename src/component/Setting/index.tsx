@@ -1,5 +1,7 @@
 import { Tabs,Tab,TabList,TabPanel } from "react-tabs";
 import WorkSetting from "./workSetting";
+import ShortBreakSetting from "./shortBreaksetting";
+import LongBreakSetting from "./longBreakSetting";
 
 
 const SettingComponent = () => {
@@ -16,6 +18,8 @@ const SettingComponent = () => {
         <Tab>Long Break</Tab>
       </TabList>
       <TabPanel><WorkSetting/></TabPanel>
+      <TabPanel><ShortBreakSetting/></TabPanel>
+      <TabPanel><LongBreakSetting/></TabPanel>
     </Tabs>
     </>
   );

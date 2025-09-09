@@ -1,14 +1,15 @@
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { setHours, setMinutes, setSeconds } from "@/store/slices/timerSlice";
+import { setSBMinutes,setSBSeconds } from "@/store/slices/shortBreakSlice";
 import { useState } from "react";
 
-const WorkSetting = () => {
+
+const ShortBreakSetting = () => {
   const dispatch = useAppDispatch();
-  const { hours, minutes, seconds } = useAppSelector((state) => state.timer);
+  const { shortMinutes,shortSeconds} = useAppSelector((state) => state.shortBreak);
   const [formState, setFormState] = useState({
-    Hours: hours,
-    Minutes: minutes,
-    Seconds: seconds,
+
+    Minutes: shortMinutes,
+    Seconds: shortSeconds,
   });
 
   const handleChange = (e: { target: { name: unknown; value: unknown } }) => {
@@ -22,24 +23,12 @@ const WorkSetting = () => {
 
   const handleSubmit = (e: unknown) => {
     e.preventDefault();
-    dispatch(setHours(formState.Hours));
-    dispatch(setMinutes(formState.Minutes));
-    dispatch(setSeconds(formState.Seconds));
+    dispatch(setSBMinutes(formState.Minutes));
+    dispatch(setSBSeconds(formState.Seconds));
   };
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="hours">
-          Hours
-          <br />
-          <input
-            id="hours"
-            name="Hours"
-            type="number"
-            value={formState.Hours}
-            onChange={handleChange}
-          />
-        </label>
         <div>
           <label htmlFor="minutes">
             Minutes
@@ -73,4 +62,4 @@ const WorkSetting = () => {
   );
 };
 
-export default WorkSetting;
+export default ShortBreakSetting;

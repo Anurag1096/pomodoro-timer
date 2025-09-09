@@ -1,14 +1,14 @@
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { setHours, setMinutes, setSeconds } from "@/store/slices/timerSlice";
+import { setLBMinutes,setLBSeconds} from "@/store/slices/longBreakSlice";
 import { useState } from "react";
 
-const WorkSetting = () => {
+
+const LongBreakSetting = () => {
   const dispatch = useAppDispatch();
-  const { hours, minutes, seconds } = useAppSelector((state) => state.timer);
+  const {longMinutes,longSeconds} = useAppSelector((state) => state.longBreak);
   const [formState, setFormState] = useState({
-    Hours: hours,
-    Minutes: minutes,
-    Seconds: seconds,
+    Minutes: longMinutes,
+    Seconds: longSeconds,
   });
 
   const handleChange = (e: { target: { name: unknown; value: unknown } }) => {
@@ -22,24 +22,12 @@ const WorkSetting = () => {
 
   const handleSubmit = (e: unknown) => {
     e.preventDefault();
-    dispatch(setHours(formState.Hours));
-    dispatch(setMinutes(formState.Minutes));
-    dispatch(setSeconds(formState.Seconds));
+    dispatch(setLBMinutes(formState.Minutes));
+    dispatch(setLBSeconds(formState.Seconds));
   };
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="hours">
-          Hours
-          <br />
-          <input
-            id="hours"
-            name="Hours"
-            type="number"
-            value={formState.Hours}
-            onChange={handleChange}
-          />
-        </label>
         <div>
           <label htmlFor="minutes">
             Minutes
@@ -73,4 +61,4 @@ const WorkSetting = () => {
   );
 };
 
-export default WorkSetting;
+export default LongBreakSetting;
