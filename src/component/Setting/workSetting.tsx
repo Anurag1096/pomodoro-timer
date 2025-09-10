@@ -1,7 +1,7 @@
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { setHours, setMinutes, setSeconds } from "@/store/slices/timerSlice";
 import { useState } from "react";
-
+import styles from '@/component/Setting/Setting.module.css'
 const WorkSetting = () => {
   const dispatch = useAppDispatch();
   const { hours, minutes, seconds } = useAppSelector((state) => state.timer);
@@ -33,10 +33,12 @@ const WorkSetting = () => {
           Hours
           <br />
           <input
+          className={styles["inputNumber"]}
             id="hours"
             name="Hours"
             type="number"
             value={formState.Hours}
+            min={0}
             onChange={handleChange}
           />
         </label>
@@ -45,7 +47,9 @@ const WorkSetting = () => {
             Minutes
             <br />
             <input
+            className={styles["inputNumber"]}
               id="minutes"
+              min={0}
               name="Minutes"
               type="number"
               value={formState.Minutes}
@@ -58,7 +62,9 @@ const WorkSetting = () => {
             Seconds
             <br />
             <input
+            className={styles["inputNumber"]}
               id="seconds"
+              min={0}
               name="Seconds"
               type="number"
               value={formState.Seconds}
@@ -67,7 +73,7 @@ const WorkSetting = () => {
           </label>
         </div>
 
-        <button type="submit">Save</button>
+        <button className={`${styles.btn} ${styles["btn--primary"]}`} type="submit">Save</button>
       </form>
     </>
   );

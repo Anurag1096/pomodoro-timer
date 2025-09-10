@@ -1,7 +1,7 @@
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { setLBMinutes,setLBSeconds} from "@/store/slices/longBreakSlice";
 import { useState } from "react";
-
+import styles from '@/component/Setting/Setting.module.css'
 
 const LongBreakSetting = () => {
   const dispatch = useAppDispatch();
@@ -33,8 +33,10 @@ const LongBreakSetting = () => {
             Minutes
             <br />
             <input
+            className={styles["inputNumber"]}
               id="minutes"
               name="Minutes"
+              min={0}
               type="number"
               value={formState.Minutes}
               onChange={handleChange}
@@ -46,8 +48,10 @@ const LongBreakSetting = () => {
             Seconds
             <br />
             <input
+            className={styles["inputNumber"]}
               id="seconds"
               name="Seconds"
+              min={0}
               type="number"
               value={formState.Seconds}
               onChange={handleChange}
@@ -55,7 +59,7 @@ const LongBreakSetting = () => {
           </label>
         </div>
 
-        <button type="submit">Save</button>
+        <button className={`${styles.btn} ${styles["btn--primary"]}`} type="submit">Save</button>
       </form>
     </>
   );

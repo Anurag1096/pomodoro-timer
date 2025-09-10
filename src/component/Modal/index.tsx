@@ -30,8 +30,9 @@ const Modal = ({ isOpen, onClose, children }: ModalProps) => {
           padding: "20px",
           borderRadius: "8px",
           boxShadow: "0 4px 6px rgba(0, 0, 0, 1)",
-          background:"rgba(33, 69, 80, 1)",
+          background:"rgba(44, 42, 42, 1)",
           position: "relative",
+          marginBottom:"1rem",
         }}
       >
         {children}
@@ -39,12 +40,14 @@ const Modal = ({ isOpen, onClose, children }: ModalProps) => {
           onClick={onClose}
           style={{
             position: "absolute",
-            top: "10px",
-            right: "10px",
-            background: 'rgba(66, 35, 35, 1)',
+            top: "16px",
+            margin:"4px",
+            right: "12px",
+            background: "none",
             border: "none",
-            fontSize: "1.2em",
+            fontSize: "2em",
             cursor: "pointer",
+            
           }}
         >
           &times;

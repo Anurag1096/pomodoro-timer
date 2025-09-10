@@ -1,11 +1,39 @@
 .customPanel {
     display:none;
+    height:100%;
     padding: 20px;
+    width:25rem;
 }
-
+.tablist--wrapper{
+    margin-top:1rem;
+}
 .selectedPanel{
     
     display:block;
+    
 
+}
+
+
+.inputNumber{
+    padding:0.5rem;
+    width:100%;
+   line-height: 0.6rem;
+   border-radius:0.5rem;
+    margin-top:0.5rem;
+    margin-bottom:0.5rem;
+}
+.btn {
+  padding: 0.8rem 1.2rem;
+  border-radius: 0.4rem;
+  border: none;
+  width:100%;
+  margin-top:1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.btn--primary{
+background-color: #62dee2ff;
+  color: #363636ff;
 
 }

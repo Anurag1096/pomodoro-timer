@@ -7,9 +7,10 @@ import "react-tabs/style/react-tabs.css";
 const SettingComponent = () => {
   return (
     <>
+    <h1>Settings</h1>
       <Tabs>
-        <TabList>
-          <Tab>Work Setting</Tab>
+        <TabList className={style["tablist--wrapper"]}>
+          <Tab>Work </Tab>
           <Tab>Short Break</Tab>
           <Tab>Long Break</Tab>
         </TabList>

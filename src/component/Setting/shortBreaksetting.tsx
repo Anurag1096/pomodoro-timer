@@ -1,7 +1,7 @@
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { setSBMinutes,setSBSeconds } from "@/store/slices/shortBreakSlice";
 import { useState } from "react";
-
+import styles from '@/component/Setting/Setting.module.css'
 
 const ShortBreakSetting = () => {
   const dispatch = useAppDispatch();
@@ -34,10 +34,12 @@ const ShortBreakSetting = () => {
             Minutes
             <br />
             <input
+            className={styles["inputNumber"]}
               id="minutes"
               name="Minutes"
               type="number"
               value={formState.Minutes}
+              min={0}
               onChange={handleChange}
             />
           </label>
@@ -47,16 +49,18 @@ const ShortBreakSetting = () => {
             Seconds
             <br />
             <input
+            className={styles["inputNumber"]}
               id="seconds"
               name="Seconds"
               type="number"
+              min={0}
               value={formState.Seconds}
               onChange={handleChange}
             />
           </label>
         </div>
 
-        <button type="submit">Save</button>
+        <button className={`${styles.btn} ${styles["btn--primary"]}`} type="submit">Save</button>
       </form>
     </>
   );
