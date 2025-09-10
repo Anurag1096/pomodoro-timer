@@ -7,12 +7,28 @@ import "react-tabs/style/react-tabs.css";
 const SettingComponent = () => {
   return (
     <>
-    <h1>Settings</h1>
+      <h1 style={{marginLeft:"0.6rem",marginBottom:"0.5rem", fontStyle:"italic"
+      }}>Settings</h1>
       <Tabs>
         <TabList className={style["tablist--wrapper"]}>
-          <Tab>Work </Tab>
-          <Tab>Short Break</Tab>
-          <Tab>Long Break</Tab>
+          <Tab
+            className={style.customTab}
+            selectedClassName={style.selectedTab}
+          >
+            Work{" "}
+          </Tab>
+          <Tab
+            className={style.customTab}
+            selectedClassName={style.selectedTab}
+          >
+            Short Break
+          </Tab>
+          <Tab
+            className={style.customTab}
+            selectedClassName={style.selectedTab}
+          >
+            Long Break
+          </Tab>
         </TabList>
         <TabPanel
           className={style.customPanel}

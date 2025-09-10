@@ -6,6 +6,11 @@
 }
 .tablist--wrapper{
     margin-top:1rem;
+    /* border-bottom:1px dashed ; */
+    display:flex;
+    margin:0 8px;
+    overflow: hidden;
+  transition: height 0.3s ease-in-out;
 }
 .selectedPanel{
     
@@ -13,7 +18,20 @@
     
 
 }
-
+.customTab{
+    padding:0.4rem;
+    list-style-type:none;
+    cursor:pointer;
+    background:transparent;
+    transition:background 0.3s ease-out;
+    border-radius:0.5rem;
+}
+.selectedTab{
+    border:none;
+    background:rgba(59, 80, 80, 0.4);
+    transition:background 0.3s ease-in;
+    border-radius:0.5rem;
+}
 
 .inputNumber{
     padding:0.5rem;
