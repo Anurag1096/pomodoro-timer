@@ -22,7 +22,7 @@
 }
 .timmer--btn:hover{
     background:rgba(24,24,27,1)
-    transform: scale(1.03);
+   
 }
 @media only screen and (max-width: 600px) {
  .hhmmss--size{

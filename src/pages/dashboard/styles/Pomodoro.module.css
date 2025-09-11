@@ -1,0 +1,28 @@
+.customTab{
+    padding:0.4rem;
+    list-style-type:none;
+    cursor:pointer;
+    font-size:1.2rem;
+    background:transparent;
+    transition:background 0.3s ease-out;
+    border-radius:0.5rem;
+}
+.customTab:hover{
+    background:rgba(24,24,27,1)
+}
+.selectedTab{
+    border:none;
+    background:rgba(59, 80, 80, 0.4);
+    transition:background 0.3s ease-in;
+    border-radius:0.5rem;
+    outline: none;
+}
+.tablist--wrapper{
+    margin-top:1rem;
+    /* border-bottom:1px dashed ; */
+    display:flex;
+    justify-content:space-between;
+    margin:0 8px;
+    overflow: hidden;
+  transition: height 0.3s ease-in-out;
+}

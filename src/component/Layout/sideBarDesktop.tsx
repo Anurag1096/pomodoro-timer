@@ -2,9 +2,14 @@ import Link from "next/link"
 import Image from "next/image"
 import { useAppDispatch,useAppSelector } from "@/store/hooks"
 import { setIsExpanded } from "@/store/slices/sidebarDesk"
+import Tooltip from "../Tooltip"
 import styles from '@/component/Layout/componentStyles/SideBarDesk.module.css'
 const SideBarDesktop=()=>{
-
+const links = [
+  { href: "/dashboard", label: "Pomodoro", icon: "/svg/curtain_open.svg" },
+  { href: "/dashboard/overview", label: "Stopwatch", icon: "/svg/curtain_open.svg" },
+  { href: "/dashboard/settings", label: "Clock", icon: "/svg/curtain_open.svg" },
+];
   const isExpanded=useAppSelector(state=>state.sidebarDesk.isExpanded)
    const dispatch =useAppDispatch()
 
@@ -17,10 +22,28 @@ const SideBarDesktop=()=>{
             </div>
         </div>
       <ul className={styles["sbDesktop-ul"]}>
-        <li className={styles["sbDesktop-li"]}><Link href="/dashboard">Home</Link></li>
-        <li className={styles["sbDesktop-li"]}><Link href="/dashboard/overview">Overviewd</Link></li>
-        <li className={styles["sbDesktop-li"]}><Link href="/dashboard/settings">Settings</Link></li>
-      </ul>
+      {links.map((link) => (
+        <li
+          key={link.href}
+          className={isExpanded ? styles["sbDesktop-li"] : styles["sbDesktop-liClose"]}
+        >
+          <Link href={link.href} className={styles["sbDesktop-link"]}>
+            {isExpanded ? (
+              link.label
+            ) : (
+              <Tooltip text={link.label}>
+              <Image
+                src={link.icon}
+                alt={link.label}
+                width={24}
+                height={24}
+              />
+              </Tooltip>
+            )}
+          </Link>
+        </li>
+      ))}
+    </ul>
     </aside>
     )
 }

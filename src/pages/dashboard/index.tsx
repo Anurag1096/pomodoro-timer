@@ -5,15 +5,16 @@ import "react-tabs/style/react-tabs.css";
 import WorkTimer from "@/component/WorkTimer";
 import ShortBreakTimer from "@/component/ShortBreakTimer";
 import LongBreakTimer from "@/component/LongBreakTimer";
+import style from '@/pages/dashboard/styles/Pomodoro.module.css'
 export default function DashboardPage() {
   return (
     <DashboardLayout>
       
       <Tabs>
-        <TabList>
-          <Tab>Work</Tab>
-          <Tab>Short Break</Tab>
-          <Tab>Long Break</Tab>
+        <TabList className={style["tablist--wrapper"]}>
+          <Tab className={style.customTab} selectedClassName={style.selectedTab}>Work</Tab>
+          <Tab className={style.customTab} selectedClassName={style.selectedTab}>Short Break</Tab>
+          <Tab className={style.customTab} selectedClassName={style.selectedTab}>Long Break</Tab>
         </TabList>
         <TabPanel>
           <WorkTimer />
