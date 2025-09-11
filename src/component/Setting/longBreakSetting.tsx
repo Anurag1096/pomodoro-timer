@@ -37,6 +37,7 @@ const LongBreakSetting = () => {
               id="minutes"
               name="Minutes"
               min={0}
+               max={60}
               type="number"
               value={formState.Minutes}
               onChange={handleChange}
@@ -52,6 +53,7 @@ const LongBreakSetting = () => {
               id="seconds"
               name="Seconds"
               min={0}
+               max={60}
               type="number"
               value={formState.Seconds}
               onChange={handleChange}

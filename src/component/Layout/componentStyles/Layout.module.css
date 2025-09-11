@@ -8,9 +8,10 @@
     width:100%;
 }
 
-.layout-content{
-      padding: 1rem;       
-  overflow-y: auto;    
-  flex: 1 1 0%;   
-  border:1px solid green;     
+.layout-content {
+  display: flex;         /* makes justify-content work */
+  justify-content: center;
+  padding: 1rem;
+  overflow-y: auto;
+  flex: 1 1 0%;
 }

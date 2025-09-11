@@ -84,13 +84,15 @@ const Timer = ({
     <>
       <div className={styles["timer-wrapper"]}>
         <HOURS Hours={hh} />
-        <MINUTES Minutes={mm} />:
+        <MINUTES Minutes={mm} /><span className={styles["hhmmss--size"]}>:</span>
         <SECONDS Seconds={ss} />
       </div>
       <audio ref={finishedRef} src={"/audio/finishSound.mp3"} />
-      <button onClick={onStart}>Start</button>
-      <button onClick={onStop}>Stop</button>
-      <button onClick={handleReset}>Reset</button>
+      <div style={{display:'flex', justifyContent:'space-between',borderTop:"4px solid rgba(24,24,27,1)",padding:'1rem'}}>
+      <button className={styles['timmer--btn']} onClick={onStart}>Start</button>
+      <button className={styles['timmer--btn']} onClick={onStop}>Stop</button>
+      <button className={styles['timmer--btn']} onClick={handleReset}>Reset</button>
+      </div>
     </>
   );
 };

@@ -8,10 +8,10 @@ import LongBreakTimer from "@/component/LongBreakTimer";
 export default function DashboardPage() {
   return (
     <DashboardLayout>
-      <h1 className="text-2xl font-bold">Dashboard Home</h1>
+      
       <Tabs>
         <TabList>
-          <Tab>Wrok</Tab>
+          <Tab>Work</Tab>
           <Tab>Short Break</Tab>
           <Tab>Long Break</Tab>
         </TabList>

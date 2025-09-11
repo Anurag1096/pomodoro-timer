@@ -50,6 +50,7 @@ const WorkSetting = () => {
             className={styles["inputNumber"]}
               id="minutes"
               min={0}
+               max={60}
               name="Minutes"
               type="number"
               value={formState.Minutes}
@@ -65,6 +66,7 @@ const WorkSetting = () => {
             className={styles["inputNumber"]}
               id="seconds"
               min={0}
+              max={60}
               name="Seconds"
               type="number"
               value={formState.Seconds}

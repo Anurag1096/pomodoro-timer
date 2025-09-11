@@ -40,6 +40,7 @@ const ShortBreakSetting = () => {
               type="number"
               value={formState.Minutes}
               min={0}
+               max={60}
               onChange={handleChange}
             />
           </label>
@@ -54,6 +55,7 @@ const ShortBreakSetting = () => {
               name="Seconds"
               type="number"
               min={0}
+               max={60}
               value={formState.Seconds}
               onChange={handleChange}
             />
