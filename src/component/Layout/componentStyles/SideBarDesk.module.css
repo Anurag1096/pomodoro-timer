@@ -5,7 +5,7 @@
   color: #ffffff;
   padding: 1rem;
   z-index:1;
-  overflow: hidden;
+  overflow: visible;
   transition: width 0.4s ease;
 }
 .sbDesktop-wrapper {
@@ -13,7 +13,8 @@
 }
 
 .sbDesktop-wrapClose {  
-  width: 3rem;
+  width: 3.2rem;
+
 }
 .curtainWrap{
     display:flex;
@@ -39,10 +40,10 @@
     text-align:center;
 }
 .sbDesktop-liClose{
-    padding:2px;
+    padding:4px;
     display:flex;
-    border-radius:0.3rem;
-    width:100%;
+    border-radius:0.1rem;
+   
 
 }
 .sbDesktop-ul span {
@@ -51,8 +52,7 @@
   transition: opacity 0.3s ease;
 }
 .sbDesktop-link {
-  display: flex;  
-  padding:0.1rem;     
+  display: flex;      
   align-items: center;    
   justify-content: center;
   width: 100%;            
@@ -65,8 +65,15 @@
 }
 .sbDesktop-li:active {
   transform: scale(0.97);
+  background:rgba(24,24,27,1)
 }
-.sbDesktop-li:hover,
-.sbDesktop-liClose:hover {
+.sbDesktop-li:hover{
   background-color: rgba(38, 54, 88, 0.9);
+
+}
+.sbDesktop-liClose:hover{
+  width:100%;
+  hegith:100%;
+  border-radius:4px solid;
+   background-color: rgba(38, 54, 88, 0.9);
 }
