@@ -8,7 +8,7 @@ const stop=()=>setSWatchRunning(false)
 
 
   return (<>
-    <div className={styles["overview-wrapper"]}>Overview</div>
+    
     <StopWatch isSwatchRunning={isSwatchRunning} onStart={start} onStop={stop}/>
 
     </>
