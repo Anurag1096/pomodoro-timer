@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import styles from '@/pages/dashboard/styles/Overview.module.css'
 import StopWatch from '@/component/Stopwatch'
-const Overview = () => {
+const Stopwatch = () => {
 const [isSwatchRunning,setSWatchRunning]=useState<boolean>(false)
 const start=()=>setSWatchRunning(true)
 const stop=()=>setSWatchRunning(false)  
@@ -15,4 +15,4 @@ const stop=()=>setSWatchRunning(false)
   )
 }
 
-export default Overview
+export default Stopwatch

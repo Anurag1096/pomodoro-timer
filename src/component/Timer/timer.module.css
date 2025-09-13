@@ -2,13 +2,14 @@
     display:flex;
     padding:0.5rem;
     font-size:1rem;
-    font-style:medium;
+    
 }
 
 .hhmmss--size{
     font-size:8rem;
-    font-style:bold;
+    font-weight:bold;
 }
+
 .timmer--btn{
     font-size:1.2rem;
     width:100%;

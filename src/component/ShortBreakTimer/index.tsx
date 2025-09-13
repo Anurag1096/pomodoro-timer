@@ -17,6 +17,9 @@ const ShortBreakTimer=()=>{
    
    
    return (<>
+
+   <div style={{color:"#397097"}}>
+
      <Timer
         hours={0}
         minutes={shortMinutes}
@@ -26,6 +29,7 @@ const ShortBreakTimer=()=>{
         onStop={stopTimer}
         onReset={resetShortTimer}
         />
+        </div>
     </>)
 }
 

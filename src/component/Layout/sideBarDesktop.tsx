@@ -7,7 +7,7 @@ import styles from '@/component/Layout/componentStyles/SideBarDesk.module.css'
 const SideBarDesktop=()=>{
 const links = [
   { href: "/dashboard", label: "Pomodoro", icon: "/svg/curtain_open.svg" },
-  { href: "/dashboard/overview", label: "Stopwatch", icon: "/svg/curtain_open.svg" },
+  { href: "/dashboard/stopwatch", label: "Stopwatch", icon: "/svg/curtain_open.svg" },
   { href: "/dashboard/settings", label: "Clock", icon: "/svg/curtain_open.svg" },
 ];
   const isExpanded=useAppSelector(state=>state.sidebarDesk.isExpanded)

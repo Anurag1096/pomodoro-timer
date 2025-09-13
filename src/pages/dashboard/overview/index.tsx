@@ -1,11 +1,11 @@
 import DashboardLayout from "@/component/Layout"
-import Overview from "./Overview"
+import Stopwatch from "./Stopwatch"
 
 
 const overview=()=>{
     return (
         <DashboardLayout>
-            <Overview />
+            <Stopwatch />
         </DashboardLayout>
     )
 }
