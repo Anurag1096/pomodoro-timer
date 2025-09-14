@@ -6,9 +6,9 @@ import Tooltip from "../Tooltip"
 import styles from '@/component/Layout/componentStyles/SideBarDesk.module.css'
 const SideBarDesktop=()=>{
 const links = [
-  { href: "/dashboard", label: "Pomodoro", icon: "/svg/curtain_open.svg" },
-  { href: "/dashboard/stopwatch", label: "Stopwatch", icon: "/svg/curtain_open.svg" },
-  { href: "/dashboard/settings", label: "Clock", icon: "/svg/curtain_open.svg" },
+  { href: "/dashboard", label: "Pomodoro", icon: "/svg/pomo.svg" ,isSelect:false},
+  { href: "/dashboard/stopwatch", label: "Stopwatch", icon: "/stopwatch.png" ,isSelect:false},
+  { href: "/dashboard/settings", label: "Clock", icon: "/svg/curtain_open.svg",isSelect:false },
 ];
   const isExpanded=useAppSelector(state=>state.sidebarDesk.isExpanded)
    const dispatch =useAppDispatch()

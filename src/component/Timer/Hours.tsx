@@ -4,7 +4,7 @@ type HoursProps = {
   Hours: number;
 };
 const HOURS = ({ Hours }: HoursProps) => {
-  return <div className={Styles['work--color']}>{`${Hours ? Hours.toString().padStart(2, "0")+":" : " "}`}</div>;
+  return <div className={Styles["hhmmss--size"]}>{`${Hours ? Hours.toString().padStart(2, "0")+":" : " "}`}</div>;
 };
 
 export default HOURS;
