@@ -1,14 +1,14 @@
 import DashboardLayout from "@/component/Layout"
-import Stopwatch from "./Stopwatch"
+import StopwatchPage from "./Stopwatch"
 
 
-const overview=()=>{
+const stopwatch=()=>{
     return (
         <DashboardLayout>
-            <Stopwatch />
+            <StopwatchPage />
             
         </DashboardLayout>
     )
 }
 
-export default overview;
+export default stopwatch;

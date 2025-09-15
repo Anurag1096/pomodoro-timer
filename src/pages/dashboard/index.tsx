@@ -9,7 +9,7 @@ import style from '@/pages/dashboard/styles/Pomodoro.module.css'
 export default function DashboardPage() {
   return (
     <DashboardLayout>
-      
+      {/* this contains timer component */}
       <Tabs>
         <TabList className={style["tablist--wrapper"]}>
           <Tab className={style.customTab} selectedClassName={style.selectedTab}>Work</Tab>
