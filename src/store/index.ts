@@ -3,12 +3,14 @@ import timerSlice from "./slices/timerSlice"
 import sidebarDeskSlice from '@/store/slices/sidebarDesk';
 import shortBreakSlice from '@/store/slices/shortBreakSlice'
 import longBreakSlice from '@/store/slices/longBreakSlice'
+import stopwatchSlice from '@/store/slices/stopwatchSlice'
 export const store= configureStore({
 reducer:{
     timer:timerSlice,
     sidebarDesk:sidebarDeskSlice,
     shortBreak:shortBreakSlice,
     longBreak:longBreakSlice,
+    stopwatch:stopwatchSlice,
 }
 })
 

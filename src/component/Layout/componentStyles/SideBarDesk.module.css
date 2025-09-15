@@ -14,7 +14,7 @@
 }
 
 .sbDesktop-wrapClose {  
-  width: 3.2rem;
+  width: 4.6rem;
 
 }
 .curtainWrap{
@@ -24,7 +24,7 @@
 }
 .curtainImgWrap{
     position:relative;
-    left:8px;
+    left:-12px;
     cursor:pointer;
 }
 .sbDesktop-ul{
@@ -32,6 +32,7 @@
     list-style-type: none;
     width:100%; 
 }
+
 .sbDesktop-li{
     padding:0.3rem;
     width:100%;
@@ -45,16 +46,13 @@
     display:flex;
     align-items:center;
     margin-bottom:10px;
-    
-   
-
 }
 .sbDesktop-ul span {
   display: inline-block;
   opacity: 1;
   transition: opacity 0.3s ease;
 }
-.sbDesktop-link {
+.sbDesktop-link{
   display: flex;      
   align-items: center;    
   justify-content: center;
@@ -63,21 +61,24 @@
   text-decoration: none;
   color: inherit;    
 }
+.sbDesktop--linkActive{
+  border-right:0.5px solid red;        /* visible */
+  color: white;
+  
+}
 .sbDesktop-wrapClose .sbDesktop-ul span {
   opacity: 0; 
 }
-.sbDesktop-li:active {
-  transform: scale(0.97);
-  background:rgba(24,24,27,1)
-}
+
 .sbDesktop-li:hover{
-  background-color: rgba(38, 54, 88, 0.9);
+  background-color: rgba(59, 59, 56, 0.5);
 
 }
 .sbDesktop-liClose:hover{
   width:100%;
   hegith:100%;
   
-  border-right:0.5px solid red;
+  background: rgba(61, 61, 58, 0.5);
+  border-radius:6px;
   
 }

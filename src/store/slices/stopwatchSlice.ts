@@ -14,7 +14,7 @@ const initialState: StopwatchState[] = [
   },
 ];
 
-const StopwatchSlice = createSlice({
+const stopwatchSlice = createSlice({
   name: "stopwatch",
   initialState,
   reducers: {
@@ -36,3 +36,7 @@ const StopwatchSlice = createSlice({
     },
   },
 });
+
+
+const {setLaps,resetLaps}= stopwatchSlice.actions;
+export default stopwatchSlice.reducer;
