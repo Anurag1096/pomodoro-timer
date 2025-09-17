@@ -45,13 +45,14 @@ const StopWatch = ({ isSwatchRunning, onStart, onStop }: StopwatchState) => {
   const ms = passedMs % 1000;
   return (
     <div className={styles["stopwatch--wrapper"]}>
-    
+    <div style={{textAlign:'center'}}>
       <span className={styles["hhmmss--size"]}>{mm.toString().padStart(2, "0")}:</span>
       <span className={styles["hhmmss--size"]}>{ss.toString().padStart(2, "0")}</span>:
       <span >
         {Math.floor(ms).toString().padStart(2, "0")}
         <br />
       </span>
+      </div>
       <div
         style={{
           display: "flex",

@@ -1,24 +1,24 @@
 import { useAppSelector } from "@/store/hooks";
-
+import styles from '@/component/LapComponent/LapComponent.module.css'
 const LapComponent = () => {
   const lapsList = useAppSelector((state) => state.stopwatch);
 
   return (
-    <table>
+    <table className={styles['table--wrapper']}>
       <thead>
         <tr>
-          <th>Lap</th>
-          <th>LapTime</th>
-          <th>Overall Time</th>
+          <th className={styles["table--headItems"]}>Lap</th>
+          <th className={styles["table--headItems"]}>LapTime</th>
+          <th className={styles["table--headItems"]}>Overall Time</th>
         </tr>
       </thead>
-      <tbody>
-        {lapsList && lapsList.length > 0 ? (
+      <tbody className={styles['table--body']}>
+        {lapsList.length > 0 ? (
           lapsList.map((listItems) => (
             <tr key={listItems.lapCount}>
-              <td>{listItems.lapCount}</td>
-              <td>{listItems.lapTime}</td>
-              <td>{listItems.overallTime}</td>
+              <td className={styles["table--headItems"]}>{listItems.lapCount}</td>
+              <td className={styles["table--headItems"]}>{listItems.lapTime}</td>
+              <td className={styles["table--headItems"]}>{listItems.overallTime}</td>
             </tr>
           ))
         ) : (

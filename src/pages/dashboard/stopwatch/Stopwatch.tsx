@@ -9,7 +9,7 @@ const stop=()=>setSWatchRunning(false)
 
 
   return (<>
-    asdf
+  
     <StopWatch isSwatchRunning={isSwatchRunning} onStart={start} onStop={stop}/>
       
         <LapComponent/>
