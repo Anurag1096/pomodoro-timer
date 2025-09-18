@@ -14,9 +14,10 @@ const LapComponent = () => {
       </thead>
       <tbody className={styles['table--body']}>
         {lapsList.length > 0 ? (
-          lapsList.map((listItems) => (
-            <tr key={listItems.lapCount}>
-              <td className={styles["table--headItems"]}>{listItems.lapCount}</td>
+          lapsList.map((listItems,index) => (
+
+            <tr key={listItems.lapTime}>
+              <td className={styles["table--headItems"]}>{index+1}</td>
               <td className={styles["table--headItems"]}>{listItems.lapTime}</td>
               <td className={styles["table--headItems"]}>{listItems.overallTime}</td>
             </tr>
