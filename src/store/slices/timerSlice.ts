@@ -41,5 +41,5 @@ const timerSlice =createSlice({
 });
 
 
-export const {setHours,setMinutes,setSeconds,timerReset}=timerSlice.actions;
+export const {setHours,setMinutes,setSeconds,timerReset,updateSessionCount}=timerSlice.actions;
 export default timerSlice.reducer

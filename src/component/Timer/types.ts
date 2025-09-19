@@ -4,6 +4,7 @@ export interface TimerState{
     seconds:number,
     isRunning:boolean,
     onStart:()=>void,
+    updatesessionCount:()=>void;
     onStop:()=>void,
     onReset:()=>void;
 }

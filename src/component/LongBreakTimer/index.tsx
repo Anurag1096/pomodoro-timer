@@ -16,12 +16,15 @@ const LongBreakTimer = () => {
   }, [dispatch, setIsRunning]);
   const startTimer = () => setIsRunning(true);
   const stopTimer = () => setIsRunning(false);
-
+ const updatesessionCount=()=>{
+    console.log('Timmer finished')
+  }
   return (
     <>
       <div style={{ color: "#38858A" }}>
         <Timer
           hours={0}
+          updatesessionCount={updatesessionCount}
           minutes={longMinutes}
           seconds={longSeconds}
           isRunning={isRunning}

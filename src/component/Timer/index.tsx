@@ -9,6 +9,7 @@ const Timer = ({
   hours,
   minutes,
   seconds,
+  updatesessionCount,
   isRunning,
   onStart,
   onStop,
@@ -39,6 +40,7 @@ const Timer = ({
         setRemainingMs(remaining);
 
         if (remaining <= 0) {
+          updatesessionCount()
           playFinishedSound();
           clearInterval(timer);
           intervalRef.current = null;

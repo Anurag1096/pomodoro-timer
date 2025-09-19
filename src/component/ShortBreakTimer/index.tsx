@@ -14,7 +14,9 @@ const ShortBreakTimer=()=>{
      }, [dispatch,setIsRunning]);
      const startTimer = () => setIsRunning(true);
      const stopTimer = () => setIsRunning(false);
-   
+    const updatesessionCount=()=>{
+    console.log('Timmer finished')
+  }
    
    return (<>
 
@@ -22,6 +24,7 @@ const ShortBreakTimer=()=>{
 
      <Timer
         hours={0}
+        updatesessionCount={updatesessionCount}
         minutes={shortMinutes}
         seconds={shortSeconds}
         isRunning={isRunning}
