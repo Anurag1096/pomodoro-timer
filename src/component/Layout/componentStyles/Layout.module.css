@@ -7,11 +7,19 @@
     padding:1rem;
     width:100%;
 }
+.layout-content{
+ 
+  padding: 1rem;
+  overflow-y: auto;
+}
 
+
+@media only screen and (min-width: 786px){
 .layout-content {
   display: flex;         /* makes justify-content work */
   justify-content: center;
   padding: 1rem;
   overflow-y: auto;
   flex: 1 1 0%;
+}
 }

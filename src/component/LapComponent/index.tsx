@@ -4,6 +4,7 @@ const LapComponent = () => {
   const lapsList = useAppSelector((state) => state.stopwatch);
 
   return (
+   
     <table className={styles['table--wrapper']}>
       <thead>
         <tr>
@@ -29,6 +30,7 @@ const LapComponent = () => {
         )}
       </tbody>
     </table>
+
   );
 };
 

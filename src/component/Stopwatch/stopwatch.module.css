@@ -29,6 +29,7 @@
     font-style:bold;
 }
 .stopwatch--wrapper{
-   width:13rem;
+   width:100%;
+   margin-bottom:2rem;
 }
 }
