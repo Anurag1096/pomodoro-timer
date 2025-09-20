@@ -2,7 +2,10 @@ import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { setHours, setMinutes, setSeconds } from "@/store/slices/timerSlice";
 import { useState } from "react";
 import styles from '@/component/Setting/Setting.module.css'
-const WorkSetting = () => {
+type SettingType={
+  onClose:()=>void;
+}
+const WorkSetting = ({onClose}:SettingType) => {
   const dispatch = useAppDispatch();
   const { hours, minutes, seconds } = useAppSelector((state) => state.timer);
   const [formState, setFormState] = useState({
@@ -20,11 +23,13 @@ const WorkSetting = () => {
     }));
   };
 
-  const handleSubmit = (e: unknown) => {
+  const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispatch(setHours(formState.Hours));
     dispatch(setMinutes(formState.Minutes));
     dispatch(setSeconds(formState.Seconds));
+    console.log("onClose:", onClose);
+    onClose()
   };
   return (
     <>

@@ -4,7 +4,12 @@ import ShortBreakSetting from "./shortBreaksetting";
 import LongBreakSetting from "./longBreakSetting";
 import style from "@/component/Setting/Setting.module.css";
 import "react-tabs/style/react-tabs.css";
-const SettingComponent = () => {
+type SettingType={
+  onClose:()=>void;
+}
+const SettingComponent = ({onClose}:SettingType) => {
+
+  console.log("setting component " ,onClose)
   return (
     <>
       <h1 style={{marginLeft:"0.6rem",marginBottom:"0.5rem", fontStyle:"italic"
@@ -34,19 +39,19 @@ const SettingComponent = () => {
           className={style.customPanel}
           selectedClassName={`${style.customPanel} ${style.selectedPanel}`}
         >
-          <WorkSetting />
+          <WorkSetting onClose={onClose} />
         </TabPanel>
         <TabPanel
           className={style.customPanel}
           selectedClassName={`${style.customPanel} ${style.selectedPanel}`}
         >
-          <ShortBreakSetting />
+          <ShortBreakSetting onClose={onClose} />
         </TabPanel>
         <TabPanel
           className={style.customPanel}
           selectedClassName={`${style.customPanel} ${style.selectedPanel}`}
         >
-          <LongBreakSetting />
+          <LongBreakSetting onClose={onClose} />
         </TabPanel>
       </Tabs>
     </>

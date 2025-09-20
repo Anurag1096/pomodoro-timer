@@ -2,8 +2,10 @@ import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { setSBMinutes,setSBSeconds } from "@/store/slices/shortBreakSlice";
 import { useState } from "react";
 import styles from '@/component/Setting/Setting.module.css'
-
-const ShortBreakSetting = () => {
+type SettingType={
+  onClose:()=>void;
+}
+const ShortBreakSetting = ({onClose}:SettingType) => {
   const dispatch = useAppDispatch();
   const { shortMinutes,shortSeconds} = useAppSelector((state) => state.shortBreak);
   const [formState, setFormState] = useState({
@@ -25,6 +27,7 @@ const ShortBreakSetting = () => {
     e.preventDefault();
     dispatch(setSBMinutes(formState.Minutes));
     dispatch(setSBSeconds(formState.Seconds));
+    onClose()
   };
   return (
     <>

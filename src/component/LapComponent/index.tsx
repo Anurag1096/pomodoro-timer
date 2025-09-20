@@ -13,7 +13,7 @@ const LapComponent = () => {
           <th className={styles["table--headItems"]}>Overall Time</th>
         </tr>
       </thead>
-      <tbody className={styles['table--body']}>
+      <tbody >
         {lapsList.length > 0 ? (
           lapsList.map((listItems,index) => (
 

@@ -24,7 +24,7 @@ const NavBar = () => {
           </li>
         </ul>
         <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
-          <SettingComponent />
+          <SettingComponent  onClose={() => setIsOpen(false)}/>
         </Modal>
       </div>
     </>

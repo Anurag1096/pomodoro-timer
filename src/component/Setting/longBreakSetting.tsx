@@ -2,8 +2,10 @@ import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { setLBMinutes,setLBSeconds} from "@/store/slices/longBreakSlice";
 import { useState } from "react";
 import styles from '@/component/Setting/Setting.module.css'
-
-const LongBreakSetting = () => {
+type SettingType={
+  onClose:()=>void;
+}
+const LongBreakSetting = ({onClose}:SettingType) => {
   const dispatch = useAppDispatch();
   const {longMinutes,longSeconds} = useAppSelector((state) => state.longBreak);
   const [formState, setFormState] = useState({
@@ -24,6 +26,8 @@ const LongBreakSetting = () => {
     e.preventDefault();
     dispatch(setLBMinutes(formState.Minutes));
     dispatch(setLBSeconds(formState.Seconds));
+    onClose()
+
   };
   return (
     <>
