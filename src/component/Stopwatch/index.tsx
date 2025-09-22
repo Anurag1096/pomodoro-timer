@@ -30,7 +30,7 @@ const StopWatch = ({ isSwatchRunning, onStart, onStop }: StopwatchState) => {
         intervalRef.current = null;
       }
     };
-  }, [isSwatchRunning]);
+  }, [isSwatchRunning ]);
 
   const resetSWatch = () => {
     if (intervalRef.current) {

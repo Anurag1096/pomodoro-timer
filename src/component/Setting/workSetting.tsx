@@ -1,21 +1,28 @@
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { setHours, setMinutes, setSeconds } from "@/store/slices/timerSlice";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import styles from '@/component/Setting/Setting.module.css'
 type SettingType={
   onClose:()=>void;
 }
+
+interface FormState{
+  Hours:number,
+  Minutes:number,
+  Seconds:number,
+}
 const WorkSetting = ({onClose}:SettingType) => {
   const dispatch = useAppDispatch();
   const { hours, minutes, seconds } = useAppSelector((state) => state.timer);
-  const [formState, setFormState] = useState({
+  const [formState, setFormState] = useState<FormState>({
     Hours: hours,
     Minutes: minutes,
     Seconds: seconds,
   });
 
-  const handleChange = (e: { target: { name: unknown; value: unknown } }) => {
-    const { name, value } = e.target;
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const name= e.target.name as keyof FormState;
+    const value=Number(e.target.value)
 
     setFormState((prev) => ({
       ...prev,

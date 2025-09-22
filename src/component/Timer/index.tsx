@@ -20,12 +20,12 @@ const Timer = ({
     () => Math.max(0, hours * 3600000 + minutes * 60000 + seconds * 1000),
     [hours, minutes, seconds]
   );
-  const finishedRef = useRef(null);
+  const finishedRef = useRef<HTMLAudioElement | null>(null);
   const pausedRef = useRef(totalDuration);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const [remainingMs, setRemainingMs] = useState<number>(totalDuration);
   const playFinishedSound = () => {
-    finishedRef.current.play();
+    finishedRef.current?.play();
   };
   useEffect(() => {
     let timer: NodeJS.Timeout | undefined;

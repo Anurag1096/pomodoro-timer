@@ -1,9 +1,15 @@
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { setLBMinutes,setLBSeconds} from "@/store/slices/longBreakSlice";
-import { useEffect,useState } from "react";
+import { ChangeEvent, FormEvent, useEffect,useState } from "react";
 import styles from '@/component/Setting/Setting.module.css'
 type SettingType={
   onClose:()=>void;
+}
+
+
+interface FormState{
+  Minutes:number,
+  Seconds:number,
 }
 const LongBreakSetting = ({onClose}:SettingType) => {
   const dispatch = useAppDispatch();
@@ -11,13 +17,14 @@ const LongBreakSetting = ({onClose}:SettingType) => {
   const sessionCount= useAppSelector(state=>state.timer.sessionCount)
   console.log("session count",sessionCount)
   const {longMinutes,longSeconds} = useAppSelector((state) => state.longBreak);
-  const [formState, setFormState] = useState({
+  const [formState, setFormState] = useState<FormState>({
     Minutes: longMinutes,
     Seconds: longSeconds,
   });
 
-  const handleChange = (e: { target: { name: unknown; value: unknown } }) => {
-    const { name, value } = e.target;
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const name = e.target.name as keyof FormState; // ensures only 'Minutes' | 'Seconds'
+  const value = Number(e.target.value); // convert string to number
 
     setFormState((prev) => ({
       ...prev,
@@ -34,7 +41,7 @@ useEffect(() => {
   }
 }, [sessionCount]);
 
-  const handleSubmit = (e: unknown) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispatch(setLBMinutes(formState.Minutes));
     dispatch(setLBSeconds(formState.Seconds));

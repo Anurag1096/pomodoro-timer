@@ -1,21 +1,28 @@
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { setSBMinutes,setSBSeconds } from "@/store/slices/shortBreakSlice";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import styles from '@/component/Setting/Setting.module.css'
 type SettingType={
   onClose:()=>void;
 }
+
+
+interface FormState{
+  Minutes:number,
+  Seconds:number,
+}
 const ShortBreakSetting = ({onClose}:SettingType) => {
   const dispatch = useAppDispatch();
   const { shortMinutes,shortSeconds} = useAppSelector((state) => state.shortBreak);
-  const [formState, setFormState] = useState({
+  const [formState, setFormState] = useState<FormState>({
 
     Minutes: shortMinutes,
     Seconds: shortSeconds,
   });
 
-  const handleChange = (e: { target: { name: unknown; value: unknown } }) => {
-    const { name, value } = e.target;
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const name = e.target.name as keyof FormState;
+    const value=Number(e.target.value);
 
     setFormState((prev) => ({
       ...prev,
@@ -23,7 +30,7 @@ const ShortBreakSetting = ({onClose}:SettingType) => {
     }));
   };
 
-  const handleSubmit = (e: unknown) => {
+  const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispatch(setSBMinutes(formState.Minutes));
     dispatch(setSBSeconds(formState.Seconds));
