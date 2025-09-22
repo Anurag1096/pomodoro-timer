@@ -30,7 +30,7 @@ const timerSlice =createSlice({
             state.seconds=action.payload;
         },
         updateSessionCount(state){
-            state.sessionCount+=state.sessionCount;
+            state.sessionCount+=1;
         },
         timerReset(state){
             state.hours=state.hours

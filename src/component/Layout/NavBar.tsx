@@ -9,22 +9,23 @@ const NavBar = () => {
   return (
     <>
       <div className={styles["navbar-wrapper"]}>
-        <ul className={styles["navlist-wrapper"]}>
-          <li className={styles["navlist-items"]}>Home</li>
-          <li
-            onClick={() => setIsOpen(true)}
-            className={styles["navlist-items"]}
-          >
-            <Image
-              src={"/svg/settings.svg"}
-              alt="setting_icon"
-              width={24}
-              height={24}
-            />
+        <ul role="list" className={styles["navlist-wrapper"]}>
+          <li tabIndex={0} role="listitem" className={styles["navlist-items"]}>
+            Home
+          </li>
+          <li role="listitem" className={styles["navlist-items"]}>
+            <button onClick={() => setIsOpen(true)} aria-label="Open settings">
+              <Image
+                src="/svg/settings.svg"
+                alt="Settings"
+                width={24}
+                height={24}
+              />
+            </button>
           </li>
         </ul>
         <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
-          <SettingComponent  onClose={() => setIsOpen(false)}/>
+          <SettingComponent onClose={() => setIsOpen(false)} />
         </Modal>
       </div>
     </>
