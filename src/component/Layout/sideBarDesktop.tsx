@@ -11,7 +11,7 @@ import styles from "@/component/Layout/componentStyles/SideBarDesk.module.css";
 const links = [
   { href: "/dashboard", label: "Pomodoro", icon: "/svg/pomo.svg" },
   { href: "/dashboard/stopwatch", label: "Stopwatch", icon: "/stopwatch.png" },
-  { href: "/dashboard/settings", label: "Clock", icon: "/svg/curtain_open.svg" },
+  
 ];
 
 export default function SideBarDesktop() {
