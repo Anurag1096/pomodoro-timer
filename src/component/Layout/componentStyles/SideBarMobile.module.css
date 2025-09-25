@@ -1,4 +1,46 @@
-sbMobile-wrapper{
-    padding:0.5rem;
-    line-height:4px;
+.sbMobile-wrapper{
+  height: 100vh;
+  width:fit-content;
+  background-color: rgba(24, 24, 22, 1);
+  color: #ffffff;
+  padding: 0.5rem;
+  z-index:1;
+  position:absolute;
+  top:0;
+  overflow: visible;
+  transition: width 0.8s  ease-in;
+}
+.sbMobile--ul{
+     margin-top:2rem;
+    list-style-type: none;
+    width:fit-content; 
+}
+.sbMobile--burger{
+    cursor: pointer;
+    z-index:2;
+    color:white;
+
+
+}
+.sbMobile--li{
+    padding:0.3rem;
+    width:100%;
+    display:flex;
+    border-radius:1rem;
+    margin: 1rem 0;
+    text-align:center;
+}
+
+
+.sbMobile--li:hover{
+    background:rgba(24,24,24,22);
+}
+.sbMobile--link{
+  display: flex;      
+  align-items: center;    
+  justify-content: center;
+  width: 100%;            
+  height: 100%;           
+  text-decoration: none;
+  color: inherit;    
 }

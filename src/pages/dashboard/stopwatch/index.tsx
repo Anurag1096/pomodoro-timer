@@ -4,7 +4,7 @@ import StopwatchPage from "./Stopwatch"
 
 const stopwatch=()=>{
     return (
-        <DashboardLayout>
+        <DashboardLayout name="Stopwatch">
             <StopwatchPage />
             
         </DashboardLayout>

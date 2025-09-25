@@ -12,6 +12,12 @@
   padding: 1rem;
   overflow-y: auto;
 }
+.layout--name{
+  positon:absolute;
+  top:0;
+  left:50%;
+  right:-50%;
+}
 
 
 @media only screen and (min-width: 786px){

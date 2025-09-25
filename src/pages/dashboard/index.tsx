@@ -8,7 +8,7 @@ import LongBreakTimer from "@/component/LongBreakTimer";
 import style from '@/pages/dashboard/styles/Pomodoro.module.css'
 export default function DashboardPage() {
   return (
-    <DashboardLayout>
+    <DashboardLayout name="Pomodoro">
       {/* this contains timer component */}
       <Tabs>
         <TabList className={style["tablist--wrapper"]}>
