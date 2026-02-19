@@ -1,2 +1,47 @@
-name : Deploy to production
+name : Deploy to production(ECR to EC2)
+
+on:
+push:
+ branches:
+         -master
+
+jobs:
+
+deploy:
+runs-on:ubuntu-latest
+
+
+setps: 
+   -uses: actions/checkout@v4
+
+
+   -name: Aws Configure
+     uses: aws-actions/configure-aws-credentials@v4
+     with:
+	     aws-access-key-id: ${{secrets.AWS_ACCESS_KEY_ID}}
+		 aws-secret-access-key:${{secrets.AWS_SECRET_ACCESS_KEY}}
+		 aws-region:ap-south-1
+
+   -name:Login to ECR
+     uses: actions/amazon-ecr-login@v2
+
+
+    -name:Build Image
+	 run: docker build -t next-app .
+
+	 -name:Tag image
+	 run: |
+	     docker tag next-app:latest ${{ secrets.ECR_REPO}}:latest
+
+
+        -name:Push image
+		 run: docker push ${{secrets.ECR_REPO}}:latest
+
+
+
+
+
+
+
+
 
